@@ -1,0 +1,46 @@
+<!-- Login/logout session code taken from http://comp1230.gblearn.com/2019/mak/wk10 -->
+<?php
+require_once $config['LIB_PATH'] . 'db_connection.php';
+$msg = '';
+
+if(isset($_POST['username']) && isset($_POST['password'])){
+    $entered_username = $_POST['username'];
+    $entered_password = md5($_POST['password']);
+    echo $entered_password;
+    $sql = "SELECT username, password FROM users WHERE username LIKE '$entered_username' AND password LIKE '$entered_password'";
+    echo "<br>" .$sql;
+}
+
+if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
+    if (authenticate($db_conn, $sql)) {
+        $_SESSION['valid'] = true;
+        $_SESSION['timeout'] = time();
+        $_SESSION['username'] = $_POST['username'];
+        header("Location: index.php"); 
+    } else {
+        $msg = 'Wrong username or password.<br>Please review your credentials and try again.';
+    }
+}
+?>
+
+<div class="login">
+    <h4 class="login_title">Login</h4>
+    <br>
+    <form method="post" class="login" action="">
+        
+        <div class="form-group ">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" value="admin">
+        </div>
+        <div class="form-group ">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" value="admin">
+        </div>
+        <span class="warning_error"><?php if(isset($msg)): echo $msg; endif; ?></span>
+        <br><br>
+        <button type="submit" name="login" class="btn btn-primary login">Login</button>
+    </form>
+
+</div>
+
+<?php echo "<a href='/folder_view/vs.php?s=" . __FILE__ . "' target='_blank'>View Source: login.phtml</a> | "; ?>

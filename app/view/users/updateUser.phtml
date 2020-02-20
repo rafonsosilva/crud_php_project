@@ -1,0 +1,34 @@
+<?php 
+ob_start();
+if(isset($_SESSION['valid'])){
+    if(isset($statements) && isset($fields) && isset($errors)){
+        echo updateUser($statements, $fields, $errors);
+    }
+    elseif(!isset($statements) && isset($fields) && isset($errors)){
+        echo updateUser("", $fields, $errors);
+    }
+    elseif(isset($statements) && !isset($fields) && isset($errors)){
+        echo updateUser($statements, "", $errors);
+    }
+    elseif(isset($statements) && isset($fields) && !isset($errors)){
+        echo updateUser($statements, $fields, "");
+    }
+    elseif(!isset($statements) && !isset($fields) && isset($errors)){
+        echo updateUser("", "", $errors);
+    }
+    elseif(!isset($statements) && isset($fields) && !isset($errors)){
+        echo updateUser("", $fields, "");
+    }
+    elseif(isset($statements) && !isset($fields) && !isset($errors)){
+        echo updateUser($statements, "", "");
+    }
+    elseif(!isset($statements) && !isset($fields) && !isset($errors)){
+        echo updateUser();
+    } 
+} 
+else{
+    echo "<h2>Unauthorized access. Login is required.<br>Redirecting to login page.<br><br>";
+    header('Refresh: 3; URL =https://f9202754.gblearn.com/comp1230/assignments/assignment2/notificationSystem_database/public/');
+}
+
+echo "<a href='/folder_view/vs.php?s=" . __FILE__ . "' target='_blank'>View Source: updateUser.phtml</a> | "; ?>

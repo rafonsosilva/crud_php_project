@@ -1,0 +1,112 @@
+<?php
+ob_start();
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Notification System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <?php if(isset($_SESSION['valid'])) : ?>
+        <div class="logout">
+            <span> <strong>User: <?php echo $_SESSION['username']; ?></strong> | </span>
+            <strong><a href="?page=authentication&action=logout">Logout</a></strong>
+        </div>
+
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link <?php echo ($page == 'home' ? 'active' : ''); ?>" href="?page=home">Home</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle
+                    <?php echo (get('page') == 'clients' && get('action') == 'add' ||
+                        get('page') == 'clients' && get('action') == 'viewActiveClients' ||
+                        get('page') == 'clients' && get('action') == 'viewArchivedClients' ? 'active' : ''); ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manage Clients
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="?page=clients&action=add">Add New Client</a>
+                        <a class="dropdown-item" href="?page=clients&action=viewActiveClients">Active Clients</a>
+                        <a class="dropdown-item" href="?page=clients&action=viewArchivedClients">Archived Clients</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle
+                <?php echo (get('page') == 'notifications' && get('action') == 'add' ||
+                    get('page') == 'notifications' && get('action') == 'viewActiveNotifications' ||
+                    get('page') == 'notifications' && get('action') == 'viewArchivedNotifications' ? 'active' : ''); ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manage
+                        Notifications
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="?page=notifications&action=add">Add New Notification</a>
+                        <a class="dropdown-item" href="?page=notifications&action=viewActiveNotifications">Active
+                            Notifications</a>
+                        <a class="dropdown-item" href="?page=notifications&action=viewArchivedNotifications">Archived
+                            Notifications</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle
+                <?php echo (get('page') == 'events' && get('action') == 'add' ||
+                    get('page') == 'events' && get('action') == 'viewActiveEvents' ||
+                    get('page') == 'events' && get('action') == 'viewArchivedEvents' ? 'active' : ''); ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manage
+                        Notification Events
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="?page=events&action=add">Add New Notification Event</a>
+                        <a class="dropdown-item" href="?page=events&action=viewActiveEvents">Active Notification Events</a>
+                        <a class="dropdown-item" href="?page=events&action=viewArchivedEvents">Archived Notification Events</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle
+                <?php echo (get('page') == 'users' && get('action') == 'add' ||
+                    get('page') == 'users' && get('action') == 'viewActiveUsers' ||
+                    get('page') == 'users' && get('action') == 'viewArchivedUsers' ? 'active' : ''); ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manage
+                        Users
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="?page=users&action=add">Add user</a>
+                        <a class="dropdown-item" href="?page=users&action=viewActiveUsers">Active Users</a>
+                        <a class="dropdown-item" href="?page=users&action=viewArchivedUsers">Archived Users</a>
+                    </div>
+                </li>
+            </ul>
+            <section id="main">
+                <?php include $main_content; ?>
+            </section>
+        </nav>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<?php else : ?>
+            <section id="main">
+                <?php 
+                echo include $config['VIEW_PATH'] . 'authentication' . DS . 'login.phtml';
+                ?>
+            </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<?php 
+endif;
+?>
+
+<?php echo "<a href='/folder_view/vs.php?s=" . __FILE__ . "' target='_blank'>View Source: layout.phtml</a> | "; ?>

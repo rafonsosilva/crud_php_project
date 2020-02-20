@@ -1,0 +1,88 @@
+body{
+    background-color: lightgrey;
+}
+#container{
+    border: 1px solid darkgrey;
+    width: 85%;
+    margin: 5px auto;
+    min-height: 600px;
+    padding: 20px;
+    background-color: white;
+}
+table{
+    margin: 10px auto;
+    width: 100%;
+    font-size: small;
+}
+.colspanCenter{
+    text-align: center;
+}
+.required_field{
+    color: red;
+}
+body, .dropdown-item{
+    font-size: smaller;
+}
+.col-md-1{
+    padding-left: 0;
+}
+form.clear_search_button, form.search_button{
+    float: right;
+    width: fit-content;
+
+}
+span.warning_error{
+    color: red;
+}
+.home_page{
+    text-align: center;
+    padding: 9%;
+}
+div.checkboxes{
+    float: left;
+}
+table th {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+table td {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+table{
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+td.actions{
+    text-align: center;
+}
+div.login{
+    width: 60%;
+    margin: 10% auto;
+    background-color: white;
+    padding: 10px;
+}
+button.login{
+    margin: auto;
+}
+form.login{
+    width: 60%;
+    margin: auto;
+}
+h4.login_title{
+    text-align: center;
+}
+div.logout{
+    float: right;
+    margin-right: 2%;
+}
+/* input#active, input#archived{
+    margin-left: 10%;
+} */
+label.user_status{
+    margin-left: 30px;
+}
+div.col-md-1{
+    text-align: center;
+}

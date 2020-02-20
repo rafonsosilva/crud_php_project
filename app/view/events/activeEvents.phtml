@@ -1,0 +1,22 @@
+<?php 
+ob_start();
+if(isset($_SESSION['valid'])){
+    if(isset($msg) && isset($statements)){
+        echo activeEvents($msg, $statements);
+    }
+    elseif(!isset($msg) && isset($statements)){
+        echo activeEvents("", $statements);
+    }
+    elseif(isset($msg) && !isset($statements)){
+        echo activeEvents($msg, "");
+    }
+    elseif(!isset($msg) && !isset($statements)){
+        echo activeEvents();
+    }
+} 
+
+else{
+    echo "<h2>Unauthorized access. Login is required.<br>Redirecting to login page.<br><br>";
+    header('Refresh: 3; URL =https://f9202754.gblearn.com/comp1230/assignments/assignment2/notificationSystem_database/public/');
+}
+echo "<a href='/folder_view/vs.php?s=" . __FILE__ . "' target='_blank'>View Source: activeEvents.phtml</a> | "; ?>

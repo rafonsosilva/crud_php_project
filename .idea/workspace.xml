@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c00b29ac-e8ca-481c-a42c-3275e0f154f5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="test.local" id="e4d4a6ed-f229-4589-bea1-5ddb1768d6a1" name="test.local" />
+      <server host="localhost" id="3b6ad20a-08f5-41b4-bea7-5d917d256f20" name="localhost" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="C:/xampp/phpMyAdmin" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="ProjectId" id="1TXCGYXgaZAYP2S4KYVsBax1O8x" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="FirefoxRemoteDebugType" activateToolWindowBeforeRun="false">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c00b29ac-e8ca-481c-a42c-3275e0f154f5" name="Default Changelist" comment="" />
+      <created>1573596957361</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573596957361</updated>
+      <workItem from="1573596958507" duration="4777000" />
+      <workItem from="1573813063268" duration="5245000" />
+      <workItem from="1573824340411" duration="4478000" />
+      <workItem from="1573861097376" duration="24496000" />
+      <workItem from="1573999911008" duration="25024000" />
+      <workItem from="1574051978624" duration="9715000" />
+      <workItem from="1574061912288" duration="741000" />
+      <workItem from="1574083106362" duration="1488000" />
+      <workItem from="1574093762670" duration="3174000" />
+      <workItem from="1574098000357" duration="418000" />
+      <workItem from="1574110071106" duration="552000" />
+      <workItem from="1574179575074" duration="37000" />
+      <workItem from="1574190409952" duration="6152000" />
+      <workItem from="1574249510208" duration="33000" />
+      <workItem from="1574285526745" duration="8288000" />
+      <workItem from="1574305625339" duration="8197000" />
+      <workItem from="1574377298204" duration="3750000" />
+      <workItem from="1574391769512" duration="685000" />
+      <workItem from="1574629296789" duration="1221000" />
+      <workItem from="1574635320447" duration="19189000" />
+      <workItem from="1574706841774" duration="297000" />
+      <workItem from="1574707190075" duration="1050000" />
+      <workItem from="1574710671431" duration="39000" />
+      <workItem from="1574710764862" duration="1009000" />
+      <workItem from="1574775921444" duration="1145000" />
+      <workItem from="1574787176003" duration="990000" />
+      <workItem from="1578677463697" duration="508000" />
+      <workItem from="1579725887902" duration="53000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

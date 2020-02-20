@@ -1,0 +1,17 @@
+<?php 
+ob_start(); 
+
+if(isset($_SESSION['valid'])){
+    if(isset($data) && isset($errors)){
+        echo addClient_view($data, $errors);
+    }
+    else{
+        echo addClient_view();
+    }
+} 
+else{
+    echo "<h2>Unauthorized access. Login is required.<br>Redirecting to login page.<br><br>";
+    header('Refresh: 3; URL =https://f9202754.gblearn.com/comp1230/assignments/assignment2/notificationSystem_database/public/');
+} 
+
+echo "<a href='/folder_view/vs.php?s=" . __FILE__ . "' target='_blank'>View Source: addClient.phtml</a> | ";
